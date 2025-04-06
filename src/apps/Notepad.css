@@ -1,0 +1,122 @@
+.notepad {
+    position: relative;
+    background-color: var(--bg-color-dark);
+    padding: 10px;
+    min-height: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+}
+.notepad > :first-child {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100%;
+}
+
+.notepad > :first-child > :first-child {
+    outline: none;
+    flex: 1;
+    min-height: 100%;
+}
+
+.tippy-box:has(.floating-menu) {
+    background-color: transparent;
+    color: #888;
+    padding-left: 0px;
+    transform: translateX(-5px);
+}
+
+.tippy-content:has(.floating-menu) {
+    padding: 0px;
+}
+
+.tippy-box:has(.slash-command-menu) {
+    background-color: var(--bg-color-dark-hover);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px var(--shadow-color);
+    padding: 0;
+    font-family: "Inter", system-ui, sans-serif;
+    z-index: 1000;
+}
+
+.tippy-content:has(.slash-command-menu) {
+    padding: 6px 4px 6px 4px;
+}
+
+/* Notion-style slash command menu */
+.slash-command-menu {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    max-width: 40vw;
+}
+
+/* Each command button */
+.slash-command-menu button {
+    all: unset;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    font-size: 14px;
+    color: var(--text-color-dark);
+}
+
+.slash-command-menu button:hover,
+.slash-command-menu .is-selected {
+    background-color: var(--accent-color);
+}
+
+/* Optional: add emoji/icon style like Notion commands */
+.slash-command-menu button .icon {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    color: #888;
+}
+
+/* No results */
+.slash-command-menu .no-result {
+    padding: 10px;
+    color: #999;
+    font-size: 14px;
+}
+
+ul[data-type="taskList"] li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 3px;
+}
+
+ul[data-type="taskList"] {
+    padding-left: 0px;
+}
+
+ul,
+ol {
+    padding-left: 25px;
+}
+
+.tiptap pre {
+    margin: 0px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--bg-color-dark-hover);
+    border: 1px solid var(--border-color);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.tiptap blockquote {
+    border-left: 3px solid var(--border-color);
+    margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    padding-right: 0px;
+}

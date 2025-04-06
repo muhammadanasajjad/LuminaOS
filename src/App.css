@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
+:root {
+    --bg-color-dark: #191919;
+    --bg-color-dark-hover: #252525;
+    --text-color-light: #f5f5f5;
+    --text-color-dark: #fff;
+    --border-color: #353535;
+    --accent-color: #313131;
+    --shadow-color: rgba(0, 0, 0, 0.08);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    padding: 0px;
+    margin: 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0px;
+    font-family: sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.desktop-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./assets/desktop.png");
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.desktop {
+    position: relative;
+    height: calc(100% - 75px - 10px);
+}
+
+.taskbar-container {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: calc(100% - 20px);
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.taskbar-container.maximised {
+    background-color: #2424246d;
+}
+
+.controls {
+    background-color: #2424246d;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    padding: 5px 5px;
+    gap: 5px;
+    border-radius: 10px;
+    border: #606060 1px solid;
+    justify-self: center;
+}
+
+.controls.maximised {
+    background-color: transparent;
+    border-width: 0px;
+}
+
+.controls-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 5px;
+    overflow: hidden;
+    transition: 200ms;
+}
+
+.controls-icon:hover {
+    background-color: #9595956d;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.controls-icon .icon {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+}
+
+.controls.hidden {
+    opacity: 0;
+}
+
+.controls.hidden .controls-icon:hover {
+    cursor: default;
+}
+
+.taskbar {
+    position: relative;
+    background-color: #2424246d;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    padding: 5px 5px;
+    gap: 5px;
+    border-radius: 10px;
+    border: #606060 1px solid;
+}
+
+.taskbar.maximised {
+    background-color: transparent;
+    border-width: 0px;
+}
+
+.taskbar-app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 10px;
+    overflow: hidden;
+    transition: 200ms;
+}
+
+.taskbar-app:hover {
+    background-color: #9595956d;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.taskbar-app img {
+    width: 40px;
+    height: 40px;
 }
